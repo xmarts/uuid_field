@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_uuid_field_uuid_field,uuid_field.uuid_field,model_uuid_field_uuid_field,,1,0,0,0
