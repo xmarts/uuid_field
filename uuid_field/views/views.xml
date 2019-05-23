@@ -1,60 +1,16 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="uuid_field.list">
-      <field name="name">uuid_field list</field>
-      <field name="model">uuid_field.uuid_field</field>
+
+    <record id="add_field_uuid_purchase" model="ir.ui.view">
+      <field name="name">add.field.uuid.purchase</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_form"/>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
+        <xpath expr="//field[@name='company_id']" position="after">
+          <field name="field_uuid_purchase" string="Campo UUID"/>
+        </xpath>
       </field>
     </record>
-    -->
 
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="uuid_field.action_window">
-      <field name="name">uuid_field window</field>
-      <field name="res_model">uuid_field.uuid_field</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="uuid_field.action_server">
-      <field name="name">uuid_field server</field>
-      <field name="model_id" ref="model_uuid_field_uuid_field"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
-
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="uuid_field" id="uuid_field.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="uuid_field.menu_1" parent="uuid_field.menu_root"/>
-    <menuitem name="Menu 2" id="uuid_field.menu_2" parent="uuid_field.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="uuid_field.menu_1_list" parent="uuid_field.menu_1"
-              action="uuid_field.action_window"/>
-    <menuitem name="Server to list" id="uuid_field" parent="uuid_field.menu_2"
-              action="uuid_field.action_server"/>
-    -->
   </data>
 </odoo>
