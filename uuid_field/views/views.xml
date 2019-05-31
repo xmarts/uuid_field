@@ -1,6 +1,7 @@
 <odoo>
   <data>
-
+  
+    <!-- Campo UUID en Compras -->
     <record id="add_field_uuid_purchase" model="ir.ui.view">
       <field name="name">add.field.uuid.purchase</field>
       <field name="model">purchase.order</field>
@@ -8,6 +9,19 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='company_id']" position="after">
           <field name="field_uuid_purchase" string="Campo UUID"/>
+          <field name="upload_field_uuid" string="UUID"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Campo UUID en Gastos -->
+    <record id="add_field_uuid_expenses" model="ir.ui.view">
+      <field name="name">add.field.uuid.expenses</field>
+      <field name="model">hr.expense</field>
+      <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='company_id']" position="after">
+          <field name="field_uuid_expenses" string="Campo UUID"/>
         </xpath>
       </field>
     </record>
